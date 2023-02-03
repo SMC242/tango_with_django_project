@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Rango</title>
+  </head>
+  <body>
+    <h1>Rango says...</h1>
+    <div>Hey there, partner!<br /><strong>{{boldmessage}}</strong></div>
+    <img src="{% static 'images/ps2-icon.webp' %}" alt="My favourite game" />
+    <div>
+      <a href="/rango/about">About</a>
+    </div>
+  </body>
+</html>
