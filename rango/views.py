@@ -12,6 +12,5 @@ def index(request: HttpRequest) -> HttpResponse:
 
 
 def about(request: HttpRequest) -> HttpResponse:
-    return HttpResponse(
-        "Rango says 'Here is the about page.'<br/><a href='/rango/'>Rango home page</a>"
-    )
+    context = {"author_name": "Eilidh"}
+    return render(request, "rango/about.html", context=context)
