@@ -1,3 +1,4 @@
+from random import randint
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rango_project.settings")
@@ -24,7 +25,7 @@ CATEGORIES = {
                 "title": "Learn Python in 10 Minutes",
                 "url": "https://www.korokithakis.net/tutorials/python/",
             },
-        ]
+        ],
     },
     "Django": {
         "views": 64,
@@ -39,7 +40,7 @@ CATEGORIES = {
                 "title": "How to Tango with Django",
                 "url": "https://www.tangowithdjango.com/",
             },
-        ]
+        ],
     },
     "Other Frameworks": {
         "views": 32,
@@ -47,7 +48,7 @@ CATEGORIES = {
         "pages": [
             {"title": "Bottle", "url": "https://bottlepy.org/docs/dev/"},
             {"title": "Flask", "url": "https://flask.pocoo.org"},
-        ]
+        ],
     },
 }
 
@@ -60,14 +61,16 @@ def add_category(name: str, views: int, likes: int) -> Category:
 
 def add_page(category: Category, title: str, url: str, views: int = 0) -> Page:
     p, _ = Page.objects.get_or_create(category=category, title=title)
-    p.url, p.views = url, views
+    p.url, p.views = url, views + randint(1, 18)
     p.save()
     return p
 
 
 def populate():
     for category_name, category_info in CATEGORIES.items():
-        category = add_category(category_name, category_info["views"], category_info["likes"])
+        category = add_category(
+            category_name, category_info["views"], category_info["likes"]
+        )
         for page in category_info["pages"]:
             add_page(category, page["title"], page["url"])
 
