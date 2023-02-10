@@ -15,15 +15,15 @@ CATEGORIES = {
         "pages": [
             {
                 "title": "Official Python Tutorial",
-                "url": "https://docs.python.org/3/tutorial/",
+                "url": "http://docs.python.org/3/tutorial/",
             },
             {
                 "title": "How to Think like a Computer Scientist",
-                "url": "https://www.greenteapress.com/thinkpython/",
+                "url": "http://www.greenteapress.com/thinkpython/",
             },
             {
                 "title": "Learn Python in 10 Minutes",
-                "url": "https://www.korokithakis.net/tutorials/python/",
+                "url": "http://www.korokithakis.net/tutorials/python/",
             },
         ],
     },
@@ -35,10 +35,10 @@ CATEGORIES = {
                 "title": "Official Django Tutorial",
                 "url": "https://docs.djangoproject.com/en/2.1/intro/tutorial01/",
             },
-            {"title": "Django Rocks", "url": "https://www.djangorocks.com/"},
+            {"title": "Django Rocks", "url": "http://www.djangorocks.com/"},
             {
                 "title": "How to Tango with Django",
-                "url": "https://www.tangowithdjango.com/",
+                "url": "http://www.tangowithdjango.com/",
             },
         ],
     },
@@ -46,8 +46,8 @@ CATEGORIES = {
         "views": 32,
         "likes": 16,
         "pages": [
-            {"title": "Bottle", "url": "https://bottlepy.org/docs/dev/"},
-            {"title": "Flask", "url": "https://flask.pocoo.org"},
+            {"title": "Bottle", "url": "http://bottlepy.org/docs/dev/"},
+            {"title": "Flask", "url": "http://flask.pocoo.org"},
         ],
     },
 }
