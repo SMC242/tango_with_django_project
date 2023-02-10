@@ -1,12 +1,10 @@
 from django import forms
 from rango.models import Page, Category
 
-TITLE_LENGTH = 128
-
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(
-        max_length=TITLE_LENGTH, help_text="Please enter the category name."
+        max_length=Category.NAME_MAX_LENGTH, help_text="Please enter the category name."
     )
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
@@ -23,7 +21,8 @@ def valid_url(s: str) -> bool:
 
 class PageForm(forms.ModelForm):
     title = forms.CharField(
-        max_length=TITLE_LENGTH, help_text="Please enter the title of the page."
+        max_length=Page.TITLE_MAX_LENGTH,
+        help_text="Please enter the title of the page.",
     )
     url = forms.URLField(max_length=200, help_text="Please enter the URL of the page.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
