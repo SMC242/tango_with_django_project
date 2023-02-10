@@ -65,8 +65,7 @@ def add_page(request: HttpRequest, category_name_slug: str) -> HttpResponse:
         form = PageForm(request.POST)
 
         if form.is_valid():
-            page = form.save(commit=True)
-            print(f"Adding to category: {category}")
+            page = form.save(commit=False)
             page.category = category
             page.views = 0
             page.save()
