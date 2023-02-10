@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db.models import Model
 
-from rango.models import Category, Page
+from rango.models import Category, Page, UserProfile
 
 
 @admin.register(Page)
@@ -15,7 +15,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-models: list[Model | admin.ModelAdmin] = []
+models: list[Model | admin.ModelAdmin] = [UserProfile]
 
 for m in models:
     admin.site.register(m)
